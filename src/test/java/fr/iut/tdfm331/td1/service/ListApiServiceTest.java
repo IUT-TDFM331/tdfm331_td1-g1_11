@@ -6,6 +6,7 @@ import org.hamcrest.collection.IsIterableContainingInAnyOrder;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.HashMap;
 
 import java.util.Arrays;
 import java.util.List;
@@ -80,4 +81,19 @@ public class ListApiServiceTest {
         service.getListMeetings().remove(meetingToRemove);
         Assert.assertFalse(service.getListMeetings().contains(meetingToRemove));
     }
+
+    @Test
+    public ListApiService findByObject(){
+        Meeting meetingToRemove = service.getListMeetings().get(0);
+        service.getListMeetings().remove(meetingToRemove);
+        Assert.assertFalse(service.findByName(meetingToRemove));
+        Assert.assertTrue(service.findByName(meetingToRemove));
+    }
+
+    public ListApiService findByName(){
+        Meeting meeting = service.getListMeetings().get(0);
+        Assert.assertFalse(service.findByName(meeting));
+        Assert.assertTrue(service.findByName(meeting));
+    }
+
 }
