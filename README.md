@@ -46,6 +46,6 @@ codes couvert/non couverts par les tests.
 
 ## Contributors 
 ```java
-//TODO
+//autheur: Anissa Boniface-Guegan S3TG1
 ```
 
